@@ -1,37 +1,46 @@
-from the import the
 from os import path as ospath
 
 def basename(self, other):
     return self._check(ospath.basename(self.obj) == other,
+                       "Basename of {} is {}.".format(self.obj, other),
                        "Basename of {} is not {}.".format(self.obj, other))
 
 def dirname(self, other):
     return self._check(ospath.dirname(self.obj) == other,
+                       "Dirname of {} is {}.".format(self.obj, other),
                        "Dirname of {} is not {}.".format(self.obj, other))
 
 def extname(self, other):
     return self._check(ospath.splitext(self.obj)[1] == other,
+                       "Extname of {} is {}.".format(self.obj, other),
                        "Extname of {} is not {}.".format(self.obj, other))
 
 def path(self):
-    return self._check(ospath.exists(self.obj), self.obj + " doesn't exist.")
+    return self._check(ospath.exists(self.obj),
+                       self.obj + " exist.", self.obj + " exist.", )
 
 def file(self):
-    return self._check(ospath.isfile(self.obj), self.obj + " is not a file")
+    return self._check(ospath.isfile(self.obj),
+                       self.obj + " is a file", self.obj + " is a not file")
 
 def dir(self):
     return self._check(ospath.isdir(self.obj),
+                       self.obj + " is a directory",
                        self.obj + " is not a directory")
 
 def link(self):
-    return self._check(ospath.islink(self.obj), self.obj + " is not a link")
+    return self._check(ospath.islink(self.obj),
+                       self.obj + " is a link",
+                       self.obj + " is not a link")
 
 def mount(self):
     return self._check(ospath.ismount(self.obj),
+                       self.obj + " is a mount point",
                        self.obj + " is not a mount point")
 
 def absolute_path(self):
     return self._check(ospath.isabs(self.obj),
+                       self.obj + " is an absolute path",
                        self.obj + " is not an absolute path")
 
 API = [basename, dirname, extname, path, file, dir, link, mount, absolute_path]
