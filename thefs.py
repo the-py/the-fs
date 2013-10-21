@@ -8,8 +8,20 @@ import thefs
 
 the.use(thefs)
 
-the("/Users/wenjun.yan").should.be.a.path
-the("/tmp/test.rb").should.be.executable
+the("/a/b/c.md").should.have.basename("c.md")
+the("/a/b/c.md").should.have.dirname("/a/b")
+the("/a/b/c.md").should.have.extname("/a/b")
+
+the("/a/b/c.md").should.be.a.path
+the("/a/b/c.md").should.be.a.file
+the("/a/b/c.md").should.be.a.dir
+the("/a/b/c.md").should.be.a.link
+the("/a/b/c.md").should.be.a.mount
+the("/a/b/c.md").should.be.an.absolute_path
+
+the("/a/b/c.md").should.be.readable
+the("/a/b/c.md").should.be.writable
+the("/a/b/c.md").should.be.executable
 """
 
 import os
