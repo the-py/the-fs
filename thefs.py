@@ -1,3 +1,17 @@
+"""
+An assertion lib for `the` to assert file system stuff.
+
+useage:
+
+from the import the
+import thefs
+
+the.use(thefs)
+
+the("/Users/wenjun.yan").should.be.a.path
+the("/tmp/test.rb").should.be.executable
+"""
+
 import os
 
 
@@ -75,14 +89,3 @@ def executable(self):
 
 API = [basename, dirname, extname, path, file, dir,
        link, mount, absolute_path, readable, writable, executable]
-
-# the.use(API)
-
-# p = "/usr/name/file.ext"
-# print os.path.basename(p)
-# print os.path.dirname(p)
-# the(p).should.have.basename("file.ext")
-# the(p).should.have.dirname("/usr/name")
-# p = "./the_fs.py"
-# the(p).should_not.be.a.dir
-# the(p).should.be.a.link
