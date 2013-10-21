@@ -39,8 +39,6 @@ class TestTheFs(unittest.TestCase):
         with self.r(AssertionError):
             expect("./readme.md").to.be.a.dir
 
-    def test_mount(self): pass
-
     def test_absolute_path(self):
         self.true(expect("/tmp/readme.md").to.be.an.absolute_path)
         with self.r(AssertionError):
@@ -50,6 +48,8 @@ class TestTheFs(unittest.TestCase):
         self.true(expect("./test.py").to.be.readable)
         with self.r(AssertionError):
             expect("/a/b/c.md").to.be.readable
+
+    def test_mount(self): pass
 
     def test_writable(self): pass
 
