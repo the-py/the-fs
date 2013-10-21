@@ -1,7 +1,7 @@
 """
 An assertion lib for `the` to assert file system stuff.
 
-useage:
+usage:
 
 from the import the
 import thefs
