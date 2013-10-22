@@ -2,6 +2,10 @@
 
 An assertion lib for `the` to assert file system stuff.
 
+[![Build Status](https://travis-ci.org/the-py/the-fs.png)](https://travis-ci.org/the-py/the-fs)
+tested on 2.7, 3.2, 3.3
+
+
 # API
 * `basename(dir)`. assert basename of a path.
 * `dirname(dir)`. assert dirname of a path.
