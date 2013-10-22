@@ -3,6 +3,8 @@ python file system better assertion
 
 An assertion lib for ``the`` to assert file system stuff.
 
+|Build Status| tested on 2.7, 3.2, 3.3
+
 API
 ===
 
@@ -43,3 +45,5 @@ Usage:
     the("/a/b/c.md").should.be.writable
     the("/a/b/c.md").should.be.executable
 
+.. |Build Status| image:: https://travis-ci.org/the-py/the-fs.png
+   :target: https://travis-ci.org/the-py/the-fs
