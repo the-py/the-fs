@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>The-fs by the-py</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/the-py/the-fs">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>The-fs</h1>
+            <h2>file system assertion plugin for `the`</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/the-py/the-fs/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/the-py/the-fs/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a name="python-file-system-better-assertion" class="anchor" href="#python-file-system-better-assertion"><span class="octicon octicon-link"></span></a>python file system better assertion</h1>
+
+<p>An assertion lib for <a href="http://the-py.github.io/the/">the</a> to assert file system stuff.</p>
+
+<p><a href="http://the-py.github.io/the/">http://the-py.github.io/the/</a></p>
+
+<p><a href="https://travis-ci.org/the-py/the-fs"><img src="https://travis-ci.org/the-py/the-fs.png" alt="Build Status"></a>
+tested on 2.7, 3.2, 3.3</p>
+
+<h1>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h1>
+
+<ul>
+<li>
+<code>basename(dir)</code>. assert basename of a path.</li>
+<li>
+<code>dirname(dir)</code>. assert dirname of a path.</li>
+<li>
+<code>extname(file)</code>. assert file extension</li>
+<li>
+<code>path</code>. assert path exists</li>
+<li>
+<code>file</code>. assert it a file</li>
+<li>
+<code>dir</code>. assert it a dir</li>
+<li>
+<code>mount</code>. assert it a mount point</li>
+<li>
+<code>absolute_path</code>. assert it an absolute path</li>
+<li>
+<code>readable</code>. assert readable.</li>
+<li>
+<code>writable</code>. assert writable.</li>
+<li>
+<code>executable</code> assert executable</li>
+</ul><h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage:</h1>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">the</span> <span class="kn">import</span> <span class="n">the</span>
+<span class="kn">import</span> <span class="nn">thefs</span>
+
+<span class="n">the</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">thefs</span><span class="p">)</span>
+
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">have</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s">"c.md"</span><span class="p">)</span>
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">have</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s">"/a/b"</span><span class="p">)</span>
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">have</span><span class="o">.</span><span class="n">extname</span><span class="p">(</span><span class="s">"/a/b"</span><span class="p">)</span>
+
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">be</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">path</span>
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">be</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">file</span>
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">be</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">dir</span>
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">be</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">link</span>
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">be</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">mount</span>
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">be</span><span class="o">.</span><span class="n">an</span><span class="o">.</span><span class="n">absolute_path</span>
+
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">be</span><span class="o">.</span><span class="n">readable</span>
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">be</span><span class="o">.</span><span class="n">writable</span>
+<span class="n">the</span><span class="p">(</span><span class="s">"/a/b/c.md"</span><span class="p">)</span><span class="o">.</span><span class="n">should</span><span class="o">.</span><span class="n">be</span><span class="o">.</span><span class="n">executable</span>
+</pre></div>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/the-py">the-py</a> can be found on <a href="https://github.com/the-py/the-fs">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
