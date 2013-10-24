@@ -1,6 +1,6 @@
 # python file system better assertion
 
-An assertion lib for `[the](http://the-py.github.io/the/)` to assert file system stuff.
+An assertion lib for [the](http://the-py.github.io/the/) to assert file system stuff.
 
 [![Build Status](https://travis-ci.org/the-py/the-fs.png)](https://travis-ci.org/the-py/the-fs)
 tested on 2.7, 3.2, 3.3
